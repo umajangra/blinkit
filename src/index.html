@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF‑8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinkit Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+
+<!-- Header -->
+  <header class="bg-yellow-400 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-black">Blinkit</div>
+      <nav class="hidden md:flex space-x-6 text-black font-medium">
+        <a href="#">Groceries</a>
+        <a href="#">Dairy</a>
+        <a href="#">Snacks</a>
+        <a href="#">Beverages</a>
+      </nav>
+      <!-- Search Input Field -->
+      <input type="text" id="search" class="border px-2 py-1 rounded-md" placeholder="Search for products..." />
+      <button class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-yellow-300 text-center py-10">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-black mb-4">Groceries delivered in 10 minutes</h1>
+    <div class="max-w-xl mx-auto flex relative">
+      <input id="searchInput" type="text" placeholder="Search for items" class="w-full px-4 py-3 rounded-l-md border border-gray-300 focus:outline-none">
+      <button class="bg-green-600 text-white px-6 py-3 rounded-r-md hover:bg-green-700">Search</button>
+      
+      <!-- Suggestions Dropdown -->
+      <ul id="suggestions" class="absolute bg-white w-full border border-gray-300 mt-1 hidden max-h-40 overflow-auto z-10">
+        <!-- Suggestions will be dynamically added here -->
+      </ul>
+    </div>
+  </section>
+  <div>
+    <img src="img/ab.webp" alt="">
+  </div>
+  <div class="flex">
+    <div>
+        <img src="img/he.avif" alt="">
+    </div>
+    <div>
+        <img src="img/pe.avif" alt="">
+    </div>
+    <div>
+        <img src="img/be.avif" alt="">
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-center"> All Product</h2>
+
+    <div class="relative">
+      <!-- Slider Container -->
+      <div id="slider" class="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar">
+        
+        <!-- Product Card -->
+        <div class="flex-shrink-0 w-60 bg-white rounded-lg shadow p-4">
+          <img src="img/815e8dd5-37e9-4dc2-b3f7-ded08e12a7ab.avif" class="w-full h-36 object-contain mb-3" />
+          <h3 class="text-lg font-semibold">Product 1</h3>
+          <p class="text-green-600 font-bold">₹49</p>
+        </div>
+
+        <div class="flex-shrink-0 w-60 bg-white rounded-lg shadow p-4">
+          <img src="img/a12.avif" class="w-full h-36 object-contain mb-3" />
+          <h3 class="text-lg font-semibold">Product 2</h3>
+          <p class="text-green-600 font-bold">₹69</p>
+        </div>
+
+        <div class="flex-shrink-0 w-60 bg-white rounded-lg shadow p-4">
+          <img src="img/bb.avif" class="w-full h-36 object-contain mb-3" />
+          <h3 class="text-lg font-semibold">Product 3</h3>
+          <p class="text-green-600 font-bold">₹89</p>
+        </div>
+
+        <div class="flex-shrink-0 w-60 bg-white rounded-lg shadow p-4">
+          <img src="img/as.avif" class="w-full h-36 object-contain mb-3" />
+          <h3 class="text-lg font-semibold">Product 4</h3>
+          <p class="text-green-600 font-bold">₹106</p>
+        </div>
+
+        <div class="flex-shrink-0 w-60 bg-white rounded-lg shadow p-4">
+          <img src="img/aaa2.avif" class="w-full h-36 object-contain mb-3" />
+          <h3 class="text-lg font-semibold">Product 5</h3>
+          <p class="text-green-600 font-bold">₹129</p>
+        </div>
+
+        <div class="flex-shrink-0 w-60 bg-white rounded-lg shadow p-4">
+          <img src="img/a21493be-1b80-4fcf-80e6-b7bc4dfec799.avif" class="w-full h-36 object-contain mb-3" />
+          <h3 class="text-lg font-semibold">Product 5</h3>
+          <p class="text-green-600 font-bold">₹1299</p>
+        </div>
+
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full hover:bg-gray-100">
+        ‹
+      </button>
+      <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full hover:bg-gray-100">
+        ›
+      </button>
+    </div>
+  </div>
+
+
+<!-- Categories Section -->
+<section class="py-8">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-xl font-semibold mb-4">Popular Categories</h2>
+    <div class="flex overflow-x-auto space-x-4 pb-2">
+      <div class="min-w-[120px] text-center">
+        <img src="img/a1.jpg" alt="Fruits" class="rounded-full mx-auto">
+        <p class="mt-2 text-sm">Fruits</p>
+      </div>
+      <div class="min-w-[120px] text-center">
+        <img src="img/a2.jpg" alt="Dairy" class="rounded-full mx-auto">
+        <p class="mt-2 text-sm">Dairy</p>
+      </div>
+      <div class="min-w-[120px] text-center">
+        <img src="img/a3.jpg" alt="Snacks" class="rounded-full mx-auto">
+        <p class="mt-2 text-sm">Snacks</p>
+      </div>
+      <div class="min-w-[120px] text-center">
+        <img src="img/123.jpg" alt="Beverages" class="rounded-full mx-auto">
+        <p class="mt-2 text-sm">Beverages</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Product Grid -->
+<section class="bg-gray-50 py-8">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl font-semibold mb-6">Featured Products</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <!-- Product Card -->
+      <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col">
+        <img src="img/1.jpg" alt="Apple" class="mb-4 rounded">
+        <h3 class="font-semibold text-sm">Fresh Apples 1kg</h3>
+        <p class="text-green-600 font-bold mt-1 mb-2">₹120</p>
+        <button class="mt-auto bg-green-600 text-white py-2 rounded hover:bg-green-700">Add</button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col">
+        <img src="img/2.jpg" alt="Milk" class="mb-4 rounded">
+        <h3 class="font-semibold text-sm">Amul Milk 500ml</h3>
+        <p class="text-green-600 font-bold mt-1 mb-2">₹28</p>
+        <button class="mt-auto bg-green-600 text-white py-2 rounded hover:bg-green-700">Add</button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col">
+        <img src="img/4.jpg" alt="Bread" class="mb-4 rounded">
+        <h3 class="font-semibold text-sm">Brown Bread</h3>
+        <p class="text-green-600 font-bold mt-1 mb-2">₹40</p>
+        <button class="mt-auto bg-green-600 text-white py-2 rounded hover:bg-green-700">Add</button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col">
+        <img src="img/5.jpg" alt="Juice" class="mb-4 rounded">
+        <h3 class="font-semibold text-sm">Orange Juice 1L</h3>
+        <p class="text-green-600 font-bold mt-1 mb-2">₹95</p>
+        <button class="mt-auto bg-green-600 text-white py-2 rounded hover:bg-green-700">Add</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+    <!-- Product Grid -->
+ 
+
+    <div>
+            <h2 class="text-2xl font-semibold mb-6">More Products</h2>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+      <!-- Product Card 1 -->
+       <div class="bg-white rounded-lg shadow-lg p-4">
+        <img src="img/u.jpg" alt="Organic Bananas" class="w-full h-48 object-contain mb-4" />
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Organic Bananas</h3>
+        <p class="text-green-600 font-bold">₹60/dozen</p>
+        <p class="text-gray-500 text-sm">Sweet, organic bananas rich in vitamins.</p>
+      </div>
+
+
+       <div class="bg-white rounded-lg shadow-lg p-4">
+        <img src="img/uu.jpg" alt="Eggs 12pcs" class="w-full h-48 object-contain mb-4" />
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Eggs 12pcs</h3>
+        <p class="text-green-600 font-bold">₹80</p>
+        <p class="text-gray-500 text-sm">Fresh eggs, perfect for your daily meals.</p>
+      </div>
+      
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <img src="img/uuu.jpg" alt="Fresh Vegetables" class="w-full h-48 object-contain mb-4" />
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Fresh Vegetables</h3>
+        <p class="text-green-600 font-bold">₹150/kg</p>
+        <p class="text-gray-500 text-sm">A variety of fresh vegetables for your kitchen.</p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <img src="img/uuuu.jpg" alt="Pasta" class="w-full h-48 object-contain mb-4" />
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Pasta</h3>
+        <p class="text-green-600 font-bold">₹90</p>
+        <p class="text-gray-500 text-sm">Delicious pasta for an easy meal any day.</p>
+      </div>
+
+      <!-- Product Card 8 -->
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <img src="img/uuuuu.jpg" alt="Yogurt" class="w-full h-48 object-contain mb-4" />
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Yogurt</h3>
+        <p class="text-green-600 font-bold">₹120</p>
+        <p class="text-gray-500 text-sm">Creamy yogurt perfect for snacks or meals.</p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-4">
+        <img src="img/12.jpg" class="w-full h-36 object-contain mb-3" alt="Paneer">
+        <h3 class="text-lg font-semibold">Paneer (200g)</h3>
+        <p class="text-green-600 font-bold">₹85</p>
+        <p class="text-gray-500 text-sm">Amul Fresh Paneer Price</p>
+      </div>
+       <div class="bg-white rounded-lg shadow p-4">
+        <img src="img/11.jpg" class="w-full h-36 object-contain mb-3" alt="Toothpaste">
+        <h3 class="text-lg font-semibold">Toothpaste</h3>
+        <p class="text-green-600 font-bold">₹55</p>
+        <p class="text-gray-500 text-sm">Buy colgate Online | blinkit</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-4">
+        <img src="img/13.jpg" class="w-full h-36 object-contain mb-3" alt="Soap">
+        <h3 class="text-lg font-semibold">Bath Soap (3 pcs)</h3>
+        <p class="text-green-600 font-bold">₹75</p>
+        <p class="text-gray-500 text-sm">Boroplus Antiseptic + Moisturising Soap - Pack of 3 Price </p>
+      </div>
+
+    </div>
+    </div>
+
+
+</section>
+
+<footer class="bg-gray-600 text-white px-6 py-10 md:px-16 lg:px-24">
+  <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    
+    <!-- Company Info -->
+    <div>
+      <h2 class="text-lg font-semibold mb-4">Blinkit</h2>
+      <p class="text-sm">Grocery delivery in minutes. Get your daily essentials at your doorstep, fast and fresh!</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-md font-semibold mb-4">Company</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:underline">About Us</a></li>
+        <li><a href="#" class="hover:underline">Careers</a></li>
+        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+        <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <!-- Customer Support -->
+    <div>
+      <h3 class="text-md font-semibold mb-4">Support</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:underline">Help Center</a></li>
+        <li><a href="#" class="hover:underline">FAQs</a></li>
+        <li><a href="#" class="hover:underline">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- App and Social -->
+    <div>
+      <h3 class="text-md font-semibold mb-4">Get the App</h3>
+      <div class="flex flex-col gap-3">
+        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="h-10"></a>
+        <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="h-10"></a>
+      </div>
+      <div class="mt-6">
+        <h3 class="text-md font-semibold mb-3">Follow us</h3>
+        <div class="flex gap-4">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="h-6 w-6"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="h-6 w-6"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="h-6 w-6"></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-center text-xs text-white mt-10 border-t pt-6">
+    &copy; 2025 Blinkit. All rights reserved.
+  </div>
+  <script src="text.js"></script>
+</footer>
+
+</body>
+</html>
